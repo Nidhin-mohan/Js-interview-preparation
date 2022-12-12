@@ -1,0 +1,27 @@
+In programming, a closure is a function that has access to the variables in its lexical scope, even when it is executed outside of that lexical scope. This means that a closure can access variables from the context in which it was created, even if that context no longer exists.
+
+Here is an example of a closure in JavaScript:
+
+********************************
+
+function createCounter() {
+  let count = 0;
+
+  return function() {
+    count++;
+    return count;
+  };
+}
+
+const counter = createCounter();
+
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+
+
+*************************************
+In this example, the createCounter function creates and returns a new function that increments a count variable each time it is called. This count variable is declared within the createCounter function, so it is not accessible outside of that function. However, because the returned function is a closure, it has access to the count variable even when it is executed outside of the createCounter function.
+
+Closures are often used in JavaScript to create private variables and methods, which can be useful for hiding implementation details and protecting the integrity of your code. They are also commonly used in asynchronous programming, because they allow you to capture and use variables from the surrounding context even after that context has changed.
+
+In an interview, it is important to be able to explain what closures are and how they work, because they are a fundamental concept in many programming languages, including JavaScript. You should also be able to give examples of when and how you have used closures in your own code.
